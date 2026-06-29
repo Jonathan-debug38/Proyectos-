@@ -1,5 +1,5 @@
 body {
-  margin: 25;
+  margin: 0;
   height: 100vh;
   place-items: center;
 }
@@ -34,10 +34,15 @@ body {
     grid-column: span 2 / span 2;
     grid-row: span 5 / span 5;
     grid-column-start: 4;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
 }
 
 .findProduct {
-    border-radius: 30px;
     background: #F8F9FA;
     grid-column: span 3 / span 3;
     grid-row: span 4 / span 4;

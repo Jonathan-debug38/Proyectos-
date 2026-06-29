@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="Style.css"
+  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
 <div class="container">
@@ -12,7 +13,12 @@
       <h1><strong>CAJERO</strong></h1>
       <h2><strong>Facilita tus ventas</strong></h2>
     </div>
-    <div class="funtions"></div>
+    <div class="funtions">
+      <button id="FinishDay">Finalizar Dia</button>
+      <button id="SearchProduct"><i class="fa-solid fa-magnifying-glass" style="margin-right: 10px;"></i>Buscar</button>
+      <input id="ProductToSearch" type="text" placeholder="Producto a buscar" required>
+      <button id="AddProduct"><i class="fa-solid fa-plus" style="margin-right: 10px;"></i>Añadir Producto</button>
+    </div>
     <div class="findProduct"></div>
 </div>
 </body>
