@@ -3,23 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Cajero - POS System</title>
   <link rel="stylesheet" href="Style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
-<div class="container">
-    <div class="title">
-      <h1><strong>CAJERO</strong></h1>
-      <h2><strong>Facilita tus ventas</strong></h2>
+<div class="app-container">
+    <header class="main-header">
+      <h1 class="main-title">CAJERO</h1>
+      <h2 class="main-subtitle">Facilita tus ventas</h2>
+    </header>
+
+    <nav class="action-panel">
+      <button id="btn-finish-day" class="btn btn-danger">Finalizar Día</button>
+      <button id="btn-add-product" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Añadir Producto</button>
+    </nav>
+
+    <div class="modal-overlay">
+      
+      <div id="modal-purchase" class="modal-card">
+        <button class="modal-close-btn">&times;</button>
+        <h2 id="txt-purchase-product" class="modal-title">Product</h2>
+        <h5 id="txt-purchase-price" class="modal-price">Price</h5>
+        <div class="input-group">
+          <label for="input-money-received">Dinero Recibido:</label>
+          <input type="number" id="input-money-received" placeholder="$0.00">
+        </div>
+        <h5 id="txt-change-due" class="modal-change">Money to be Handed Over</h5>
+        <button id="btn-confirm-purchase" class="btn btn-success">Confirmar Compra</button>
+      </div>
+
+      <div id="modal-add-product" class="modal-card">
+        <button class="modal-close-btn">&times;</button>
+        <h2 class="modal-title">Añadir Producto</h2>
+        <div class="input-group">
+          <label for="input-product-name">Nombre del Producto:</label>
+          <input type="text" id="input-product-name" placeholder="Ej. Arepa con Queso">
+        </div>
+        <div class="input-group">
+          <label for="input-product-price">Precio:</label>
+          <input type="number" id="input-product-price" placeholder="$0.00">
+        </div>
+        <button id="btn-confirm-add" class="btn btn-primary">Añadir Producto</button>
+      </div>
+
+      <div id="mini-modal-success" class="mini-modal-card">
+        <i class="fa-solid fa-circle-check success-icon"></i>
+        <h3>¡Compra Hecha!</h3>
+        <p>El registro se completó con éxito.</p>
+        <button id="btn-success-accept" class="btn btn-success">Aceptar</button>
+      </div>
+
     </div>
-    <div class="funtions">
-      <button id="FinishDay">Finalizar Dia</button>
-      <button id="SearchProduct"><i class="fa-solid fa-magnifying-glass" style="margin-right: 10px;"></i>Buscar</button>
-      <input id="ProductToSearch" type="text" placeholder="Producto a buscar" required>
-      <button id="AddProduct"><i class="fa-solid fa-plus" style="margin-right: 10px;"></i>Añadir Producto</button>
+
+    <div class="find-product-section">
+      <div class="input-group">
+        <label for="input-search-bar">Buscar Producto:</label>
+        <input type="text" id="input-search-bar" placeholder="Escribe el nombre del producto...">
+      <button id="btn-search-product" class="btn btn-secondary"><i class="fa-solid fa-magnifying-glass"></i>Buscar</button>
+      </div>
+      <div id="search-results-container" class="search-results"></div>
     </div>
-    <div class="findProduct"></div>
 </div>
+  <script src="Script.js"></script>
 </body>
 </html>
